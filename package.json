@@ -1,0 +1,51 @@
+{
+  "name": "express-ts-boilerplate",
+  "version": "0.0.1",
+  "description": "A minimalistic Express.js TypeScript boilerplate with jest and nodemon.",
+  "main": "src/server.ts",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest --coverage",
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
+    "start": "nodemon --watch src --exec ts-node src/server.ts",
+    "start:production": "npm run test && npm run build && npm run start:prod",
+    "start:prod": "cross-env NODE_ENV=production nodemon dist/server.js",
+    "build": "cross-env NODE_ENV=production tsc --build tsconfig.json",
+    "build:clean": "rimraf ./dist"
+  },
+  "keywords": [],
+  "author": "hello@fauzanelka.id",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.21",
+    "@types/multer": "^1.4.5",
+    "@types/node": "^14.14.35",
+    "@types/supertest": "^2.0.10",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.22.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "jest": "^26.6.3",
+    "supertest": "^6.1.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2"
+  }
+}
