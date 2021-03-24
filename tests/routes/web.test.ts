@@ -7,10 +7,8 @@ describe('WebRoutes', () => {
 
     expect(response.status).toBe(200);
 
-    const responseJson = JSON.parse(response.body);
-
-    expect(responseJson).toBe({
-      message: `🚀 Express.js is listening on port ${process?.env?.PORT || 3000}.`,
+    expect(response.body).toEqual({
+      message: '🚀 Express.js is running.',
     });
   });
 });
